@@ -3,6 +3,9 @@ const express = require("express");
 
 const app = express();
 
+// MIDDLEWARE
+app.use(express.json());
+
 // app.get("/", (req, res) => {
 //   res.status(200);
 //   // res.send("Hello from the server side!");
@@ -22,7 +25,23 @@ app.get("/api/v1/tours", (req, res) => {
     .json({ status: "success", results: tours.length, data: { tours } });
 });
 
+app.post("/api/v1/tours", (req, res) => {
+  // console.log(req.body);
+  const newTour = { id: tours.at(-1).id + 1, ...req.body };
+  console.log(newTour);
+  tours.push(newTour);
+  fs.writeFile(
+    `${__dirname}/dev-data/data/tours-simple.json`,
+    JSON.stringify(tours),
+    (err) => {
+      if (err) return console.log(err);
+      // 201 stands for CREATED
+      res.status(201).json({ status: "success", data: { tour: newTour } });
+    }
+  );
+});
+
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}...`);
+  console.log(`Server running on port ${PORT}...`);
 });
