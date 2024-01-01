@@ -72,6 +72,28 @@ app.patch("/api/v1/tours/:id", (req, res) => {
     .json({ status: "success", data: { tour: "<Updated tour here...>" } });
 });
 
+app.delete("/api/v1/tours/:id", (req, res) => {
+  const id = req.params.id * 1;
+  if (id >= tours.length)
+    return res.status(404).json({
+      status: "failed",
+      message: "Invalid ID",
+    });
+  const updatedTours = tours.filter((tour) => tour.id != id);
+
+  fs.writeFile(
+    `${__dirname}/dev-data/data/tours-simple.json`,
+    JSON.stringify(updatedTours),
+    (err) => {
+      if (err) return console.log(err);
+      res.status(204).json({
+        status: "success",
+        data: null,
+      });
+    }
+  );
+});
+
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}...`);
