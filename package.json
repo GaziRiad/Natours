@@ -2,13 +2,18 @@
   "name": "natours",
   "version": "1.0.0",
   "description": "Learning Node express and mongodb",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "keywords": [
     "nodejs"
   ],
   "author": "Riad Hallouch",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "morgan": "^1.10.0"
+  }
 }
