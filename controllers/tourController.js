@@ -3,10 +3,18 @@ const Tour = require("../models/tourModel");
 // 2) ROUTE HANDLERS
 const getAllTours = async (req, res) => {
   try {
-    const tours = await Tour.find();
+    const querObj = { ...req.query };
+    const excludedFields = ["page", "sort", "limit", "fields"];
+    excludedFields.forEach((field) => delete querObj[field]);
+
+    console.log(req.query, querObj);
+
+    const query = Tour.find(querObj);
+
+    const tours = await query;
     res
       .status(200)
-      .json({ status: "success", data: { tours }, results: tours.length });
+      .json({ status: "success", results: tours.length, data: { tours } });
   } catch (err) {
     res.status(404).json({ status: "error", message: err.message });
   }
