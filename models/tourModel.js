@@ -28,6 +28,7 @@ const tourShema = new mongoose.Schema(
     ratingsQuantity: {
       type: Number,
       default: 0,
+      select: true, //set it to false for sensitive data to be excluded from the responses
     },
     price: {
       type: Number,
