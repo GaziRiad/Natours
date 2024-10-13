@@ -3,13 +3,19 @@ const Tour = require("../models/tourModel");
 // 2) ROUTE HANDLERS
 const getAllTours = async (req, res) => {
   try {
-    const querObj = { ...req.query };
+    const queryObj = { ...req.query };
     const excludedFields = ["page", "sort", "limit", "fields"];
-    excludedFields.forEach((field) => delete querObj[field]);
+    excludedFields.forEach((field) => delete queryObj[field]);
 
-    console.log(req.query, querObj);
+    // 1. Advanced Filtering: Use regex for partial matches (optional)
+    let queryStr = JSON.stringify(queryObj).replace(
+      /\b(gt|gte|lt|lte|in)\b/g,
+      (match) => `$${match}`,
+    );
 
-    const query = Tour.find(querObj);
+    queryStr = JSON.parse(queryStr);
+    console.log(queryStr);
+    const query = Tour.find(queryStr);
 
     const tours = await query;
     res
