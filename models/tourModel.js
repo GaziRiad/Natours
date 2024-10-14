@@ -55,6 +55,10 @@ const tourSchema = new mongoose.Schema(
     },
     images: [String],
     startDates: [Date],
+    secretTour: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
@@ -77,10 +81,26 @@ tourSchema.pre("save", function (next) {
   next();
 });
 
-tourSchema.post("save", function (doc, next) {
-  console.log("Document was saved:", doc);
+// tourSchema.post("save", function (doc, next) {
+//   next();
+// });
+
+// QUERY MIDDLEWARE
+// tourSchema.pre("find", function (next) {
+// This rgex makes it work for find queries!!
+tourSchema.pre(/^find/, function (next) {
+  this.find({ secretTour: { $ne: true } });
+
+  this.start = Date.now();
   next();
 });
+
+// tourSchema.post(/^find/, function (docs, next) {
+//   console.log(`Docs total: ${docs.length}`);
+
+//   console.log(`Query took: ${Date.now() - this.start} milliseconds`);
+//   next();
+// });
 
 const Tour = mongoose.model("Tour", tourSchema);
 
