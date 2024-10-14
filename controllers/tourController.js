@@ -1,8 +1,18 @@
 const Tour = require("../models/tourModel");
 
 // 2) ROUTE HANDLERS
+
+const aliasTopTours = (req, res, next) => {
+  req.query.limit = "5";
+  req.query.sort = "-ratingsAverage,price";
+  req.query.fields = "name,price,ratingsAverage,summary,difficulty";
+
+  next();
+};
+
 const getAllTours = async (req, res) => {
   try {
+    console.log(req.query);
     const queryObj = { ...req.query };
     const excludedFields = ["page", "sort", "limit", "fields"];
     excludedFields.forEach((field) => delete queryObj[field]);
@@ -14,7 +24,6 @@ const getAllTours = async (req, res) => {
     );
 
     queryStr = JSON.parse(queryStr);
-    console.log(queryStr);
     let query = Tour.find(queryStr);
 
     // 2. Sorting
@@ -114,4 +123,5 @@ module.exports = {
   createTour,
   updateTour,
   deleteTour,
+  aliasTopTours,
 };
