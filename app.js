@@ -20,10 +20,6 @@ app.use("/api/v1/users", userRouter);
 
 //Unamtched routes
 app.all("*", (req, res, next) => {
-  // const err = new Error(`Can't find ${req.originalUrl} on this server!`);
-  // err.status = "fail";
-  // err.statusCode = 404;
-
   const err = new AppError(
     `Can't find ${req.originalUrl} on this server!`,
     404,
