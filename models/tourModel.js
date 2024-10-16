@@ -1,6 +1,5 @@
 /* eslint-disable prefer-arrow-callback */
 /* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable func-names */
 const mongoose = require("mongoose");
 const slugify = require("slugify");
 
@@ -51,7 +50,6 @@ const tourSchema = new mongoose.Schema(
     priceDiscount: {
       type: Number,
       validate: {
-        // eslint-disable-next-line object-shorthand
         validator: function (value) {
           // this only points to current doc on NEW document creation
           return value <= this.price;

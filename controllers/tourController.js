@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const APIFeatures = require("../lib/utils/apifeatures");
 const AppError = require("../lib/utils/appError");
 const catchAsync = require("../lib/utils/catchAsync");

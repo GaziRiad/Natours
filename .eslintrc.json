@@ -10,13 +10,16 @@
     "no-shadow": "off",
     "no-console": "off",
     "no-underscore-dangle": "off",
+    "no-unused-vars": "off",
     "consistent-return": "off",
     "class-methods-use-this": "off",
     "no-param-reassign": ["error", { "props": false }],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "arrow-body-style": ["error", "as-needed"],
     "prefer-const": "error",
-    "spaced-comment": "off"
+    "spaced-comment": "off",
+    "object-shorthand": "off",
+    "func-names": "off"
   },
   "parserOptions": {
     "ecmaVersion": 12,
