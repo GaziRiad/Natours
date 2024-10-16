@@ -11,8 +11,8 @@ const connectDB = async () => {
   try {
     const conn = await mongoose.connect(DB);
     console.log(`MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error(error.message);
+  } catch (err) {
+    console.error(err.name, err.message);
     process.exit(1);
   }
 };
@@ -21,6 +21,16 @@ connectDB();
 
 const port = process.env.PORT || 3000;
 // 4) START SERVER
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Server  running on port ${port}...`);
+});
+
+process.on("unhandledRejection", (err) => {
+  console.error("UNHANDLED REJECTION! Shutting down...");
+  console.error(err.name, err.message);
+
+  // Optional: Gracefully close the server before exiting
+  server.close(() => {
+    process.exit(1);
+  });
 });
