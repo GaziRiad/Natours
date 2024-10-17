@@ -55,6 +55,7 @@ module.exports = (err, req, res, next) => {
     sendErrorDev(err, res);
   } else if (process.env.NODE_ENV.trim() === "production") {
     let error = { ...err };
+    error.message = err.message; // Ensure message is copied
     if (err.name === "CastError") error = handleCastErrorDB(error);
 
     // Duplicate key error
