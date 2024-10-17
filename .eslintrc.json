@@ -17,6 +17,7 @@
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "arrow-body-style": ["error", "as-needed"],
     "prefer-const": "error",
+    "prefer-arrow-callback": "off",
     "spaced-comment": "off",
     "object-shorthand": "off",
     "func-names": "off"
