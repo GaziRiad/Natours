@@ -103,7 +103,7 @@ const getMonthPlan = catchAsync(async (req, res, next) => {
     },
     {
       $group: {
-        _id: { $month: "$startDates" },
+        _id: { $month: "$startDates" }, //this $month read as a month so july becomes 7
         numTourStart: { $sum: 1 },
         tours: { $push: "$name" },
       },
