@@ -2,6 +2,7 @@ const crypto = require("crypto");
 const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
 const validator = require("validator");
+const { type } = require("os");
 
 const userSchema = new mongoose.Schema(
   {
@@ -42,9 +43,20 @@ const userSchema = new mongoose.Schema(
     passwordChangedAt: Date,
     passwordResetToken: String,
     passwordResetExpires: Date,
+    active: {
+      type: Boolean,
+      default: true,
+      select: false,
+    },
   },
   { timestamps: true },
 );
+
+userSchema.pre(/^find/, async function (next) {
+  this.find({ active: { $ne: false } });
+
+  next();
+});
 
 userSchema.pre("save", async function (next) {
   //Only run this func if password was actually modified
