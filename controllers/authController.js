@@ -60,6 +60,8 @@ const login = catchAsync(async (req, res, next) => {
   if (!user || !(await user.correctPassword(password, user.password)))
     return next(new AppError("Invalid credentials", 401)); //UNAUTHRIZED
 
+  // Remove password field from the output
+  user.password = undefined;
   // 3) If everything okay, send token to client
   createSendToken(user, 200, res);
 });
