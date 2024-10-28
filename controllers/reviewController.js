@@ -14,22 +14,15 @@ const getAllReviews = catchAsync(async (req, res, next) => {
   });
 });
 
-const getReview = catchAsync(async (req, res, next) => {
-  const { id } = req.params;
-
-  const review = await Review.findById(id);
-
-  if (!review) next(new AppError("No review found with that ID", 404));
-
-  res.status(200).json({
-    status: "success",
-    data: { review },
-  });
-});
-
 const createReview = catchAsync(async (req, res, next) => {
+  const { tourId } = req.params;
+
+  if (!req.body.tour) req.body.tour = req.params.tourId;
+  if (!req.body.user) req.body.user = req.user.id;
+
   const newReview = await Review.create({
     ...req.body,
+    tour: tourId,
     user: req.user._id,
   });
 
@@ -41,21 +34,4 @@ const createReview = catchAsync(async (req, res, next) => {
   });
 });
 
-const deleteReview = catchAsync(async (req, res, next) => {
-  const { id } = req.params;
-  const review = await Review.findById(id);
-
-  console.log(review);
-
-  if (
-    req.user.role === "admin" ||
-    String(req.user._id) === String(review.user._id)
-  ) {
-    await Review.findByIdAndDelete(id);
-    console.log("DELETED!");
-  }
-
-  res.status(204).json({ status: "success", data: null });
-});
-
-module.exports = { getAllReviews, getReview, createReview, deleteReview };
+module.exports = { getAllReviews, createReview };
