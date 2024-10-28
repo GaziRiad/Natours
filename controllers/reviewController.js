@@ -4,7 +4,6 @@ const Review = require("../models/reviewModel");
 
 const getAllReviews = catchAsync(async (req, res, next) => {
   const reviews = await Review.find();
-  console.log(reviews);
 
   res.status(200).json({
     status: "success",
