@@ -7,8 +7,11 @@ const xss = require("xss-clean");
 const hpp = require("hpp");
 
 const AppError = require("./lib/utils/appError");
+
 const userRouter = require("./routes/userRoutes");
 const tourRouter = require("./routes/tourRoutes");
+const reviewRouter = require("./routes/reviewRoutes");
+
 const globalErrorHandler = require("./controllers/errorController");
 
 const app = express();
@@ -59,6 +62,7 @@ app.use(express.static(`${__dirname}/public`));
 
 app.use("/api/v1/tours", tourRouter);
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/reviews", reviewRouter);
 
 //Unamtched routes
 app.all("*", (req, res, next) => {
