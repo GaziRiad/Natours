@@ -12,11 +12,13 @@ const {
 } = require("../controllers/tourController");
 const { protect, restrictTo } = require("../controllers/authController");
 
-const { createReview } = require("../controllers/reviewController");
+const reviewRouter = require("./reviewRoutes");
 
 const router = express.Router();
 
 // 3) ROUTES
+
+router.use("/:tourId/reviews", reviewRouter);
 
 router.route("/tour-stats").get(getTourStats);
 router.route("/monthly-plan/:year").get(getMonthPlan);
@@ -28,11 +30,5 @@ router
   .get(getTour)
   .patch(updateTour)
   .delete(protect, restrictTo("admin", "lead-guide"), deleteTour);
-
-// Reviews
-router
-  .route("/:tourId/reviews")
-  .get()
-  .post(protect, restrictTo("user"), createReview);
 
 module.exports = router;
