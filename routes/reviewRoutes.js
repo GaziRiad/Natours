@@ -9,7 +9,7 @@ const router = express.Router({ mergeParams: true });
 
 router
   .route("/")
-  .get(protect, getAllReviews)
+  .get(getAllReviews)
   .post(protect, restrictTo("user"), createReview);
 
 module.exports = router;
