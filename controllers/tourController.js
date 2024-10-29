@@ -2,6 +2,7 @@ const APIFeatures = require("../lib/utils/apifeatures");
 const AppError = require("../lib/utils/appError");
 const catchAsync = require("../lib/utils/catchAsync");
 const Tour = require("../models/tourModel");
+const factory = require("./handlerFactory");
 
 // 2) ROUTE HANDLERS
 
@@ -58,15 +59,7 @@ const updateTour = catchAsync(async (req, res, next) => {
   res.status(200).json({ status: "success", data: { tour } });
 });
 
-const deleteTour = catchAsync(async (req, res, next) => {
-  const tour = await Tour.findByIdAndDelete(req.params.id);
-
-  if (!tour) {
-    return next(new AppError("No tour found with that ID", 404));
-  }
-
-  res.status(204).send({ status: "success", data: null });
-});
+const deleteTour = factory.deleteOne(Tour);
 
 const getTourStats = catchAsync(async (req, res, next) => {
   const stats = await Tour.aggregate([
