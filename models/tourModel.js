@@ -110,6 +110,11 @@ const tourSchema = new mongoose.Schema(
   },
 );
 
+// This is must do for performance! usually for data we query often.
+// tourSchema.index({ price: 1 });
+tourSchema.index({ price: 1, ratingsAverage: -1 });
+tourSchema.index({ slug: 1 });
+
 tourSchema.virtual("durationWeeks").get(function () {
   return Math.ceil(this.duration / 7);
 });
