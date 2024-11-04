@@ -72,7 +72,7 @@ const getMonthPlan = catchAsync(async (req, res, next) => {
   res.status(200).json({ status: "success", data: { plan } });
 });
 
-const getToursWithin = async (req, res, next) => {
+const getToursWithin = catchAsync(async (req, res, next) => {
   // "/tours-within/233/center/34.110867,-118.047104/unit/mi"
 
   const { distance, latlng, unit } = req.params;
@@ -100,7 +100,42 @@ const getToursWithin = async (req, res, next) => {
   res
     .status(200)
     .json({ success: "success", results: tours.length, data: { data: tours } });
-};
+});
+
+const getDistances = catchAsync(async (req, res, next) => {
+  const { latlng, unit } = req.params;
+  const [lat, long] = latlng.split(",");
+
+  const multiplier = unit === "mi" ? 0.000621371 : 0.001;
+
+  if (!lat || !long)
+    next(
+      new AppError(
+        "Please provide latitude and longitude in the format lat,long.",
+        400,
+      ),
+    );
+
+  // This works for startLocation because of indexing, so if there's multiple indexes you must set the KEY property!!
+  const distances = await Tour.aggregate([
+    {
+      $geoNear: {
+        near: {
+          type: "Point",
+          coordinates: [long * 1, lat * 1],
+        },
+        distanceField: "distance",
+        distanceMultiplier: multiplier,
+      },
+    },
+    { $project: { distance: 1, name: 1 } },
+  ]);
+
+  res.status(200).json({
+    success: "success",
+    data: { data: distances },
+  });
+});
 
 module.exports = {
   getAllTours,
@@ -112,4 +147,5 @@ module.exports = {
   getTourStats,
   getMonthPlan,
   getToursWithin,
+  getDistances,
 };
