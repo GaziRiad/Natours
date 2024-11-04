@@ -1,1 +1,15 @@
-h1 The Park Camper
+doctype html
+html 
+  head
+    title Natours | #{tour}
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='shortcut icon', href='/img/favicon.png', type='image/png')
+  body
+    h1= tour
+    h2= user.toUpperCase()
+    //- h1 The Park Camper
+
+    - const x = 9;
+    h2= 2 * x
+
+    p A nature retreat in the heart of the city.
