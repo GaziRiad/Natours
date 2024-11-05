@@ -123,7 +123,7 @@ tourSchema.virtual("durationWeeks").get(function () {
   return Math.ceil(this.duration / 7);
 });
 
-// Virtual Populate
+// Virtual Populate (to get reviews with child referencing)
 tourSchema.virtual("reviews", {
   ref: "Review",
   foreignField: "tour",
