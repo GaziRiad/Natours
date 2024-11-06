@@ -68,7 +68,7 @@ const login = catchAsync(async (req, res, next) => {
 
 const protect = catchAsync(async (req, res, next) => {
   // 1) Getting token and check if it exists
-  const token = req.headers.authorization?.split(" ")[1];
+  const token = req.headers.authorization?.split(" ")[1] || req.cookies.jwt;
 
   if (!token) return next(new AppError("Authentication required", 401));
 

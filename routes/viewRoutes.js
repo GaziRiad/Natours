@@ -4,6 +4,7 @@ const {
   getTour,
   getLoginForm,
 } = require("../controllers/viewsController");
+const { protect } = require("../controllers/authController");
 
 const router = express.Router();
 
