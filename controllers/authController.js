@@ -96,6 +96,29 @@ const protect = catchAsync(async (req, res, next) => {
   next();
 });
 
+// Only for rendered page, no errors! (PUG)
+const isLoggedIn = catchAsync(async (req, res, next) => {
+  if (req.cookies.jwt) {
+    // 1) Verify of token
+    const decoded = await promisify(jwt.verify)(
+      req.cookies.jwt,
+      process.env.JWT_SECRET,
+    );
+
+    // 3) Check if user still exists
+    const currentUser = await User.findById(decoded.id);
+    if (!currentUser) return next();
+
+    // 4) Check if user changed password after the token was issued
+    if (currentUser.changedPasswordAfter(decoded.iat)) return next();
+
+    //THERE IS A LOGGED IN USER
+    res.locals.user = currentUser; //This locals is accesible in pug templates
+    return next();
+  }
+  next();
+});
+
 const restrictTo = (...roles) => {
   return (req, res, next) => {
     // roles["admin", "lead-guide"]. "user"
@@ -199,4 +222,6 @@ module.exports = {
   forgotPassword,
   resetPassword,
   updatePassword,
+  //
+  isLoggedIn,
 };
