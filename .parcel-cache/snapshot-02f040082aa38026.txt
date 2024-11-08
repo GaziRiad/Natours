@@ -6,7 +6,7 @@
 101C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\bcryptjs\LICENSE133755306835985735 0
 110C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\string.prototype.includes133755306967061401 1
 116C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\array.prototype.tosorted\.nycrc133755306831009555 0
-89C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\public\js\bundled133755322690527200 1
+89C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\public\js\bundled133755393439034943 1
 115C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\postcss-value-parser\README.md133755307675233390 0
 104C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\lodash\invokeMap.js133755307237673031 0
 99C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\public\img\users\user-2.jpg133755305546879688 0
@@ -53,7 +53,7 @@
 111C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\buffer-equal-constant-time133755306839301414 1
 119C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\utility-types\dist\mapped-types.js133755307672627127 0
 99C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\lodash\fp\F.js133755307226653838 0
-82C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\.gitignore133755305544959292 0
+82C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\.gitignore133755323901765889 0
 114C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\array.prototype.findlastindex133755306971937173 1
 108C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\css-select\package.json133755307685335345 0
 121C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\mongoose\lib\error\bulkWriteError.js133755307052162917 0
@@ -138,7 +138,7 @@
 110C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\token-stream\package.json133755306828739116 0
 116C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\core-js\library\fn\object\is.js133755311889284786 0
 131C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\language-subtag-registry\data\json\script.json133755307001696786 0
-90C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\public\js\login.js133755322708594485 0
+90C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\public\js\login.js133755393438394922 0
 104C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\globalthis\index.js133755306868033183 0
 120C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\es-abstract\2023\BigInt\subtract.js133755307310210021 0
 81C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\server.js133755316716635137 0
@@ -305,7 +305,7 @@
 162C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\@parcel\core\test\fixtures\plugins\node_modules\parcel-transformer-no-engines133755307699468212 1
 125C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\mongoose\lib\helpers\cursor\eachAsync.js133755307091610317 0
 105C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\lodash\fp\orderBy.js133755307250760228 0
-90C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\public\js\index.js133755319273708081 0
+90C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\public\js\index.js133755389342882653 0
 93C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\views\_reviewCard.pug133755305547129681 0
 134C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\@babel\types\lib\validators\matchesPattern.js.map133755307160181179 0
 111C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\eslint\lib\rules\no-var.js133755307204401924 0
@@ -355,7 +355,7 @@
 114C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\prettier\plugins\markdown.mjs133755307098326482 0
 99C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\public\img\users\user-5.jpg133755305546899686 0
 147C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\@parcel\optimizer-htmlnano\node_modules\css-tree\lib\generator133755307696862489 1
-92C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\routes\userRoutes.js133755305547099692 0
+92C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\routes\userRoutes.js133755390251065834 0
 122C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\mongoose\lib\drivers\browser\index.js133755307111623408 0
 137C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\caniuse-lite\data\features\passive-event-listener.js133755307705319630 0
 105C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\word-wrap\index.d.ts133755306837010934 0
@@ -3160,7 +3160,7 @@
 109C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\levn\lib\parse-string.js133755306836365734 0
 117C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\validator\es\lib\isLuhnNumber.js133755307108017935 0
 122C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\typed-array-byte-offset\test\index.js133755306837651031 0
-101C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\controllers\authController.js133755305544979329 0
+101C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\controllers\authController.js133755393133123733 0
 118C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\es-abstract\2017\IsConstructor.js133755307264532365 0
 120C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\eslint-plugin-jsx-a11y\lib\index.js133755307085429183 0
 113C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\webidl-conversions\README.md133755306836315726 0
@@ -19572,5 +19572,5 @@
 118C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\core-js\client\library.min.js.map133755311893964755 0
 105C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\node_modules\core-js\CHANGELOG.md133755311894440582 0
 83C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\.env.config133755317469451546 0
-98C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\public\js\bundled\index.js133755322690452114 0
-102C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\public\js\bundled\index.js.map133755322690512113 0
+98C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\public\js\bundled\index.js133755393438984929 0
+102C:\Users\golde\Desktop\web dev cources\Nodejs - Jonas\4-natours\starter\public\js\bundled\index.js.map133755393439014950 0
